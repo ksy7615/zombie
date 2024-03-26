@@ -70,6 +70,14 @@ public class Game {
 		System.out.println("[2] 포션먹기");
 	}
 	
+	private void runAttackMode(int select) {
+		if(select == 1) {
+//			attackMonster();
+		} else if(select == 2) {
+//			eatPotion();
+		}
+	}
+	
 	private void runMenu(int select) {
 		if (select == 1) {
 			haveAnAdventurePlayer();
