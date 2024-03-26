@@ -53,4 +53,16 @@ public class Game {
 			printMenu();
 		}
 	}
+	
+	private int inputNumber(String message) {
+		int number = -1;
+		try {
+			System.out.println(message + " : ");
+			String input = scanner.next();
+			number = Integer.parseInt(input);
+		} catch (Exception e) {
+			System.err.println("숫자를 입력하세요.");
+		}
+		return number;
+	}
 }
