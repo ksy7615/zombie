@@ -55,7 +55,7 @@ public class Player extends Unit {
 		if(this.potion > 0) {
 			setHp(MAX_HP);
 			this.potion --;
-			System.out.println(getHp());
+			System.out.println("player" + this);
 			System.out.println("완전히 회복되었습니다!");
 			
 		} else if(this.potion == 0) {
