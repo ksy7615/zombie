@@ -57,10 +57,16 @@ public class Game {
 	private void meetZombie() {
 		if(player.getPosition() == zombie.getPosition()) {
 			System.out.println("좀비를 만났다!");
+			System.out.println("[공격모드로 전환]");
 			
 			while(true) {
-				System.out.println("[공격모드로 전환]");
 				printAttackMode();
+				runAttackMode(inputNumber("선택"));
+				
+				if(zombie.getHp() == 0) {
+					System.out.println("좀비를 무찔렀다!");
+					return;
+				}
 			}
 		}
 	}
@@ -70,9 +76,14 @@ public class Game {
 		System.out.println("[2] 포션먹기");
 	}
 	
+	private void attackZombie() {
+		player.attack(zombie);
+		zombie.attack(player);
+	}
+	
 	private void runAttackMode(int select) {
 		if(select == 1) {
-//			attackMonster();
+			attackZombie();
 		} else if(select == 2) {
 //			eatPotion();
 		}
