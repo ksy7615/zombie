@@ -50,61 +50,75 @@ public class Game {
 	private void haveAnAdventurePlayer() {
 		int position = player.getPosition() + 1;
 		player.setPosition(position);
-		
+
 		meetZombie();
+		meetBoss();
 	}
-	
+
 	private void meetZombie() {
-		if(player.getPosition() == zombie.getPosition()) {
+		if (player.getPosition() == zombie.getPosition()) {
 			System.out.println("좀비를 만났다!");
 			System.out.println("[공격모드로 전환]");
-			
-			while(true) {
+
+			while (true) {
 				printAttackMode();
-				runAttackMode(inputNumber("선택"));
-				
-				if(zombie.getHp() == 0) {
+				runAttackMode(inputNumber("선택"), zombie);
+
+				if (zombie.getHp() == 0) {
 					System.out.println("좀비를 무찔렀다!");
 					return;
 				}
 			}
 		}
 	}
-	
+
 	private void meetBoss() {
-		if(player.getPosition() == boss.getPosition()) {
+		if (player.getPosition() == boss.getPosition()) {
 			System.out.println("보스를 만났다!");
 			System.out.println("[공격모드로 전환]");
-			
-			while(true) {
+
+			while (true) {
 				printAttackMode();
-				runAttackMode(inputNumber("선택"));
+				runAttackMode(inputNumber("선택"), boss);
+
+				if (boss.getHp() == 0) {
+					System.out.println("보스를 무찔렀다!");
+					return;
+				}
 			}
 		}
 	}
-	
+
 	private void printAttackMode() {
 		System.out.println("[1] 공격하기");
 		System.out.println("[2] 포션먹기");
 	}
-	
-	private void attackZombie() {
-		player.attack(zombie);
-		zombie.attack(player);
+
+	private void attackMonster(Unit unit) {
+		// 보스 몹임을 받았으면 boss 공격하게
+		if (unit instanceof BossMob) {
+			player.attack(boss);
+			boss.attack(player);
+			
+		// 아니면 좀비니까
+		} else {
+			player.attack(zombie);
+			zombie.attack(player);
+		}
 	}
-	
+
 	private void eatPotion() {
 		player.recovery();
 	}
-	
-	private void runAttackMode(int select) {
-		if(select == 1) {
-			attackZombie();
-		} else if(select == 2) {
+
+	private void runAttackMode(int select, Unit unit) {
+		if (select == 1) {
+			attackMonster(unit);
+		} else if (select == 2) {
 			eatPotion();
 		}
 	}
-	
+
 	private void runMenu(int select) {
 		if (select == 1) {
 			haveAnAdventurePlayer();
