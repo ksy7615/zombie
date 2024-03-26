@@ -12,9 +12,14 @@ public class Game {
 		return instance;
 	}
 	
-	public void run() {
+	private void setGame() {
 		Player player = new Player(1, 200, 30, 2);
 		Zombie zombie = new Zombie(4, 100, 10);
 		Boss boss = new Boss(9, 300, 20, 100);
+	}
+	
+	public void run() {
+		setGame();
+		
 	}
 }
