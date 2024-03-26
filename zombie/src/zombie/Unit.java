@@ -3,6 +3,7 @@ package zombie;
 import java.util.Random;
 
 abstract public class Unit {
+	public final int MAX_HP;
 	private int position, hp;
 	public int attackMax;
 	public Random random;
@@ -12,6 +13,7 @@ abstract public class Unit {
 	// 3. 공격력
 	
 	public Unit(int position, int hp, int attackMax) {
+		MAX_HP = hp;
 		this.position = position;
 		this.hp = hp;
 		this.attackMax = attackMax;
