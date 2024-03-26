@@ -38,6 +38,10 @@ public class Game {
 		return true;
 	}
 	
+	private void locatedPlayer() {
+		System.out.println("플레이어의 위치 : "+player.getPosition());
+	}
+	
 	private void printMenu() {
 		System.out.println("[1] 앞으로 이동");
 		System.out.println("[0] 종료");
@@ -45,7 +49,8 @@ public class Game {
 
 	public void run() {
 		while(isRun()) {
-			
+			locatedPlayer();
+			printMenu();
 		}
 	}
 }
