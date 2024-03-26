@@ -47,14 +47,14 @@ public class Game {
 		System.out.println("[0] 종료");
 	}
 
-	private void movePlayer() {
+	private void haveAnAdventurePlayer() {
 		int position = player.getPosition() + 1;
 		player.setPosition(position);
 	}
-
+	
 	private void runMenu(int select) {
 		if (select == 1) {
-			movePlayer();
+			haveAnAdventurePlayer();
 		} else if (select == 0) {
 			isExit = true;
 		}
