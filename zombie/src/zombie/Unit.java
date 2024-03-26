@@ -1,16 +1,22 @@
 package zombie;
 
+import java.util.Random;
+
 abstract public class Unit {
-	int position, hp, attack;
+	private int position, hp;
+	public int attackMax;
+	public Random random;
 	// 모든 유닛이 가진 속성
 	// 1. 위치
 	// 2. hp
 	// 3. 공격력
 	
-	public Unit(int position, int hp, int attack) {
+	public Unit(int position, int hp, int attackMax) {
 		this.position = position;
 		this.hp = hp;
-		this.attack = attack;
+		this.attackMax = attackMax;
+		
+		random = new Random();
 	}
 
 	public int getPosition() {
@@ -29,8 +35,8 @@ abstract public class Unit {
 		this.hp = hp;
 	}
 
-	public int getAttack() {
-		return this.attack;
+	public int getAttackMax() {
+		return this.attackMax;
 	}
 	
 	abstract void attack(Unit unit);
