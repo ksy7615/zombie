@@ -33,5 +33,6 @@ abstract public class Unit {
 		return this.attack;
 	}
 	
+	abstract void attack(Unit unit);
 	
 }
