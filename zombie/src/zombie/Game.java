@@ -71,6 +71,18 @@ public class Game {
 		}
 	}
 	
+	private void meetBoss() {
+		if(player.getPosition() == boss.getPosition()) {
+			System.out.println("보스를 만났다!");
+			System.out.println("[공격모드로 전환]");
+			
+			while(true) {
+				printAttackMode();
+				runAttackMode(inputNumber("선택"));
+			}
+		}
+	}
+	
 	private void printAttackMode() {
 		System.out.println("[1] 공격하기");
 		System.out.println("[2] 포션먹기");
