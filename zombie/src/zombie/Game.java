@@ -46,11 +46,21 @@ public class Game {
 		System.out.println("[1] 앞으로 이동");
 		System.out.println("[0] 종료");
 	}
+	
+	private void runMenu(int select) {
+		if(select == 1) {
+//			movePlayer();
+		} else if (select == 0) {
+			isExit = true;
+		}
+	}
 
 	public void run() {
 		while(isRun()) {
 			locatedPlayer();
 			printMenu();
+			int select = inputNumber("입력");
+			runMenu(select);
 		}
 	}
 	
