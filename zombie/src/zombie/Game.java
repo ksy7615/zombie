@@ -81,11 +81,15 @@ public class Game {
 		zombie.attack(player);
 	}
 	
+	private void eatPotion() {
+		player.recovery();
+	}
+	
 	private void runAttackMode(int select) {
 		if(select == 1) {
 			attackZombie();
 		} else if(select == 2) {
-//			eatPotion();
+			eatPotion();
 		}
 	}
 	
