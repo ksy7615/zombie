@@ -12,7 +12,7 @@ public class Player extends Unit {
 	@Override
 	public void attack(Unit monster) {
 		// 보스 >>>
-		if(monster instanceof Boss) {
+		if(monster instanceof BossMob) {
 			Boss boss = (Boss) monster;
 			
 			this.sword = random.nextInt(attackMax) + 1;
