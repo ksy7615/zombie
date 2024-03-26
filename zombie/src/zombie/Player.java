@@ -15,10 +15,10 @@ public class Player extends Unit {
 		if(monster instanceof Boss) {
 			Boss boss = (Boss) monster;
 			
-			sword = random.nextInt(attackMax) + 1;
+			this.sword = random.nextInt(attackMax) + 1;
 			// 보스는 쉴드가 있으므로 공격할 때 쉴드부터 깨기
 			if(boss.getShield() > 0) {
-				int brokenShield = boss.getShield() - sword;
+				int brokenShield = boss.getShield() - this.sword;
 				
 				// 쉴드가 안깨진 상태
 				if(brokenShield >= 0) {
@@ -29,28 +29,38 @@ public class Player extends Unit {
 					boss.setHp(boss.getHp() - brokenShield);
 				}
 			} else {
-				boss.setHp(boss.getHp()-sword);
+				boss.setHp(boss.getHp()-this.sword);
 			}
 			
 			if(boss.getHp() <= 0) {
 				boss.setHp(0);
 			}
-			System.out.printf("플레이어가 공격력 %d로 공격\n", sword);
+			System.out.printf("플레이어가 공격력 %d로 공격\n", this.sword);
 			System.out.printf("현재 보스의 Shield : %d\n", boss.getShield());
 			System.out.printf("현재 보스의 HP : %d\n", boss.getHp());
 		}
 		
 		// 좀비 >>>
-		sword = random.nextInt(attackMax) + 1;
-		monster.setHp(monster.getHp() - sword);
+		this.sword = random.nextInt(attackMax) + 1;
+		monster.setHp(monster.getHp() - this.sword);
 		
 		if(monster.getHp() <= 0) {
 			monster.setHp(0);
 		}
-		System.out.printf("플레이어가 공격력 %d로 공격\n", sword);
+		System.out.printf("플레이어가 공격력 %d로 공격\n", this.sword);
 		System.out.printf("현재 좀비의 HP : %d\n", monster.getHp());
 	}
 	
-	
+	public void recovery() {
+		if(this.potion > 0) {
+			setHp(MAX_HP);
+			this.potion --;
+			System.out.println(getHp());
+			System.out.println("완전히 회복되었습니다!");
+			
+		} else if(this.potion == 0) {
+			System.err.println("텅 -");
+		}
+	}
 
 }
