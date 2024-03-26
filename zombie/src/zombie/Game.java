@@ -50,6 +50,18 @@ public class Game {
 	private void haveAnAdventurePlayer() {
 		int position = player.getPosition() + 1;
 		player.setPosition(position);
+		
+		meetZombie();
+	}
+	
+	private void meetZombie() {
+		if(player.getPosition() == zombie.getPosition()) {
+			System.out.println("좀비를 만났다!");
+			
+			while(true) {
+				System.out.println("[공격모드로 전환]");
+			}
+		}
 	}
 	
 	private void runMenu(int select) {
