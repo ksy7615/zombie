@@ -60,8 +60,14 @@ public class Game {
 			
 			while(true) {
 				System.out.println("[공격모드로 전환]");
+				printAttackMode();
 			}
 		}
+	}
+	
+	private void printAttackMode() {
+		System.out.println("[1] 공격하기");
+		System.out.println("[2] 포션먹기");
 	}
 	
 	private void runMenu(int select) {
