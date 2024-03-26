@@ -12,4 +12,8 @@ public class Boss extends Zombie {
 		return shield;
 	}
 
+	public void setShield(int shield) {
+		this.shield = shield;
+	}
+
 }
