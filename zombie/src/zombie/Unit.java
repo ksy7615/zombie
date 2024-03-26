@@ -43,4 +43,8 @@ abstract public class Unit {
 	
 	abstract void attack(Unit unit);
 	
+	@Override
+	public String toString() {
+		return String.format("[%d/%d]", this.hp, MAX_HP);
+	}
 }
