@@ -3,8 +3,8 @@ package zombie;
 public class Zombie extends Unit {
 	private int bite;
 
-	public Zombie(int position, int hp, int attackMax) {
-		super(position, hp, attackMax);
+	public Zombie() {
+		super(5, 100, 10);
 	}
 
 	@Override
