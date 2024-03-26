@@ -8,4 +8,8 @@ public class Boss extends Zombie {
 		this.shield = shield;
 	}
 
+	public int getShield() {
+		return shield;
+	}
+
 }
