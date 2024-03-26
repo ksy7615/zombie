@@ -35,8 +35,15 @@ public class Boss extends Zombie implements BossMob {
 			System.out.println("치명상을 입었다!");
 			System.out.println("player" + player);
 		}
+		
+		int power = random.nextInt(attackMax) + 1;
+		player.setHp(player.getHp() - power);
+		
+		if(player.getHp() <= 0) {
+			player.setHp(0);
+		}
+		System.out.println("보스가 공격했다!");
+		System.out.printf("[%d]데미지의 공격\n", power);
+		System.out.println("player" + player);
 	}
-	
-	
-
 }
