@@ -96,7 +96,7 @@ public class Game {
 
 	private void attackMonster(Unit unit) {
 		// 보스 몹임을 받았으면 boss 공격하게
-		if (unit instanceof BossMob) {
+		if (unit instanceof Boss) {
 			player.attack(boss);
 			boss.attack(player);
 			
