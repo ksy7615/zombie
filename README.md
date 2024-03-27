@@ -46,4 +46,5 @@
 ![diagram](https://github.com/ksy7615/zombie/blob/master/images/ZombieGame%20(2).jpg)
 
 > Demo
-> ![diagram]()
+
+![diagram](https://github.com/ksy7615/zombie/blob/master/images/playZombieGame.gif)
