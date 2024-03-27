@@ -1,6 +1,6 @@
 package zombie;
 
-public class Boss extends Zombie implements BossMob {
+public class Boss extends Zombie {
 	private int shield;
 
 	public Boss(int position, int hp, int attackMax, int shield) {
