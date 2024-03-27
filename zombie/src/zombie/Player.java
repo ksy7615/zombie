@@ -12,7 +12,7 @@ public class Player extends Unit {
 	@Override
 	public void attack(Unit monster) {
 		// 보스 >>>
-		if (monster instanceof BossMob) {
+		if (monster instanceof Boss) {
 			attackBoss(monster);
 		// 좀비 >>>	
 		} else {
