@@ -21,5 +21,4 @@ public class Zombie extends Unit {
 		System.out.printf("[%d]데미지의 깨물기 공격\n", this.bite);
 		System.out.println("player" + player);
 	}
-	
 }
